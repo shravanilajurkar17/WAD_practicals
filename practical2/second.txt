@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/JavaScript">
+       function display()
+        {
+            let text =localStorage.getItem("formJSON");
+            let obj = JSON.parse(text);
+            document.getElementById("abc").rows[0].cells[1].innerHTML=obj.name;
+             document.getElementById("abc").rows[1].cells[1].innerHTML=obj.email;
+            document.getElementById("abc").rows[2].cells[1].innerHTML=obj.contact;
+        }
+    </script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   <Style>
+    body{
+        background-color: rgb(114, 188, 238);
+    }
+   </Style>
+</head>
+<body>
+    <br>
+    <button type="button"  class= "btn btn-primary" onclick="display();">Display</button>
+    <br>
+    <table id="abc">
+        <tr>
+            <td>NAME:</td>
+            <td></td>
+            
+        </tr>
+        
+        <tr>
+            <td>EMAIL:</td>
+            <td></td>
+            
+        </tr>
+        
+        <tr>
+            <td>CONTACT:</td>
+            <td></td>
+        
+        </tr>
+        
+    </table>
+</body>
+</html>
