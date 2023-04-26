@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/JavaScript">
+    function fun()
+    {
+        const myObj={name:document.getElementById("exampleInputName").value,email:document.getElementById("exampleInputEmail").value,contact:document.getElementById("exampleInputContact").value}
+        const myJSON = JSON.stringify(myObj);
+        localStorage.setItem("formJSON",myJSON);
+    }
+    </script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<style>
+    *{
+        background-color: rgb(125, 184, 230);
+    }
+</style>
+</head>
+<body>
+    <form action="second.html" name="formJSON">
+        
+                <label form="exampleInputName" class="form-label">NAME</label>
+                
+                <input type="name" class="form-control" id="exampleInputName" placeholder="Enter your name" required>
+                <br>
+            
+            <label for="exampleInputEmail" class="form-label">EMAIL</label>
+            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter your email" required>
+             <div id="emailHelp" class="form-text"></div>
+        <br>
+          
+            <label for="exampleInputContact" class="form-label">CONTACT</label>
+                <input type="tel" class="form-control" id="exampleInputContact" maxlength="10" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="Enter your contact" required >
+          <br>
+          <input class="btn btn-primary" type="submit" value="Submit" onclick="fun();">
+          <input class="btn btn-primary" type="reset" value="Reset" onclick="fun();">
+    </form>
+</body>
+</html>
